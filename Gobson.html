@@ -181,7 +181,7 @@
   </div>
   
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.9.1/tsparticles.confetti.bundle.min.js"></script>
 <script>
 function check() {
   val = document.getElementById('answer').value.trim().toUpperCase();
@@ -215,6 +215,11 @@ function check() {
     res.className = 'result success';
     res.innerHTML = 'You\'ve done it! You\'ve actually done it! Gobbernackle is saved!';
     res.style.display = 'block';
+    confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 },
+    });
   }
 }
 function toggleHint() {

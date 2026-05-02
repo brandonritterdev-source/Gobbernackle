@@ -188,7 +188,7 @@ function check() {
   res = document.getElementById('result');
   if (val === 'TRANSLATOR') {
     res.className = 'result success';
-    res.innerHTML = 'Come no closer. State your business with the gobfather.</a>';
+    res.innerHTML = 'Come no closer. State your business with the gobfather.';
     res.style.display = 'block';
   } 
   else {
@@ -196,7 +196,7 @@ function check() {
     res.innerHTML = '<strong>Try Again!</strong><br>The guard raises their spear menacingly. ';
     res.style.display = 'block';
   }
-  if (val == 'POTION') {
+  if (val == 'POTION' || val == 'RECIPE') {
     res.className = 'result success';
     res.innerHTML = 'You need a potion for Gobson\'s ritual? Yeah I might know where to find the recipe. The Gobfather talks in his sleep sometimes. There should be a map that points to all kinds of treasure somewhere nearby, maybe that can help. It\'s all gobbledegook if you ask me, good luck making any sense of it.</a>';
     res.style.display = 'block';
