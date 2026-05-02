@@ -186,37 +186,7 @@ function check() {
   const now = new Date();
   const unlock = now % 2;
 
-  const duration = 15 * 1000,
-  animationEnd = Date.now() + duration,
-  defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
-function randomInRange(min, max) {
-  return Math.random() * (max - min) + min;
-  }
-
-const interval = setInterval(function() {
-  const timeLeft = animationEnd - Date.now();
-
-  if (timeLeft <= 0) {
-    return clearInterval(interval);
-  }
-
-  const particleCount = 50 * (timeLeft / duration);
-
-  // since particles fall down, start a bit higher than random
-  confetti(
-    Object.assign({}, defaults, {
-      particleCount,
-      origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-    })
-  );
-  confetti(
-    Object.assign({}, defaults, {
-      particleCount,
-      origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-    })
-  );
-}, 250);
+  
   
   val = document.getElementById('answer').value.trim().toUpperCase();
   res = document.getElementById('result');
@@ -256,7 +226,37 @@ const interval = setInterval(function() {
     res.className = 'result success';
     res.innerHTML = '<strong>So you\'ve finally figured out our true power.<br><br> Goblins Together Strong</strong> <br><br>You\'ve truely shown yourself to be an exceptionally cunning and tenacious goblin with a constitution to match! As my ascendant follower I grant you good fortune in all your days to come.';
     res.style.display = 'block';
-    confetti();
+    const duration = 15 * 1000,
+    animationEnd = Date.now() + duration,
+    defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+    function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+    }
+
+  const interval = setInterval(function() {
+    const timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+
+    const particleCount = 50 * (timeLeft / duration);
+
+    // since particles fall down, start a bit higher than random
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+      })
+    );
+    confetti(
+      Object.assign({}, defaults, {
+        particleCount,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+      })
+    );
+  }, 250);
   } 
   
 
