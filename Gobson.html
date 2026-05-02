@@ -211,6 +211,12 @@ function check() {
     res.innerHTML = 'Really? Gonk was an archmage the whole time? Maybe he\'s the one that cursed the Gobfather. Now that you have the spirit of the forest coarsing through you procure the Chosen\'s sceptre and perform the ritual of cleansing on the Gobfather by using the sceptor on the lower part of the back of his head and removing whatever foulness was left in there by Gonk\'s treachery.<br><br>Be careful not to be too rough with the Gobfather or there\'s a chance he could become lost forever.';
     res.style.display = 'block';
   }
+  if (val == 'UNNATURAL' || val == 'SIGHT' || val == 'UNNATURAL SIGHT' || val == 'TRUESIGHT') {
+    res.className = 'result success';
+    res.innerHTML = 'The Gobfather has blessed you with truesight? I wonder what discoveries can be made with such an ability.';
+        res.style.display = 'block';
+  }
+
   if (val == '!' || val == 'QUEST') {
     res.className = 'result success';
     res.innerHTML = 'You\'ve done it! You\'ve actually done it! Gobbernackle is saved!';

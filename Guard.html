@@ -163,7 +163,7 @@
   <div class="result" id="result"></div>
 
   <label for="answer">Enter a decoded keyword:</label>
-  <input type="text" id="answer" maxlength="10" placeholder="_ _ _ _ _" autocomplete="off" spellcheck="false">
+  <input type="text" id="answer" maxlength="17" placeholder="_ _ _ _ _" autocomplete="off" spellcheck="false">
   <button class="btn" onclick="check()">Submit Answer</button>
   <button class="hint-btn" onclick="toggleHint()">Need a hint?</button>
   <div class="hint" id="hint">Perhaps dwelling upon the wisdom of those that came before could help you translate what this strange goblin is saying.</div>
@@ -200,6 +200,11 @@ function check() {
     res.className = 'result success';
     res.innerHTML = 'You need a potion for Gobson\'s ritual? Yeah I might know where to find the recipe. The Gobfather talks in his sleep sometimes. There should be a map that points to all kinds of treasure somewhere nearby, maybe that can help. It\'s all gobbledegook if you ask me, good luck making any sense of it.</a>';
     res.style.display = 'block';
+  }
+  if (val == 'UNNATURAL' || val == 'SIGHT' || val == 'UNNATURAL SIGHT' || val == 'TRUESIGHT') {
+    res.className = 'result success';
+    res.innerHTML = 'Woah the Gobfather gave you powers? Start lookin\' at stuff!!';
+        res.style.display = 'block';
   }
 
   

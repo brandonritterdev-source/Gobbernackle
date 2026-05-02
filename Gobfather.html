@@ -222,6 +222,11 @@ function check() {
     res.innerHTML = '<strong>Ah... It seems you are unworthy...</strong> <br><i>You watch in horror as your bones leap from your body.<br><br></i> Feel free to try again.';
     res.style.display = 'block';
   } 
+  if (val == 'UNNATURAL' || val == 'SIGHT' || val == 'UNNATURAL SIGHT' || val == 'TRUESIGHT') {
+    res.className = 'result success';
+    res.innerHTML = 'Use your new found ability wisely. Truesight is not something to abuse.';
+        res.style.display = 'block';
+  }
   if (val === 'TOGETHER STRONG') {
     res.className = 'result success';
     res.innerHTML = '<strong>So you\'ve finally figured out our true power.<br><br> Goblins Together Strong</strong> <br><br>You\'ve truely shown yourself to be an exceptionally cunning and tenacious goblin with a constitution to match! As my ascendant follower I grant you good fortune in all your days to come.';
