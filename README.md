@@ -5,9 +5,9 @@ overly commercialized, it officially takes place on April 30th to May 1st. It's 
 How It Works
 At the start of the night you bring a gift that you've found or made yourself to try and curry favor with the Gob Father. Don't Buy a Gift.
 
-Once everyone has submitted their gifts the Gob Father will choose his favorite and make that person the Gobs Chosen. They then wear the goblin mask and carry the scepter for the night. 
+Once everyone has submitted their gifts the Gob Father will choose his favorite and make that person the Gobs Chosen. They then wear the goblin mask and carry the sceptre for the night. 
 
-The rest of the participants try to beguile or steal the scepter/ scepter topper from the Chosen one without being noticed. If they are detected the Chosen decides on a contest and whoever wins is the Chosen. 
+The rest of the participants try to beguile or steal the sceptre/ sceptre topper from the Chosen one without being noticed. If they are detected the Chosen decides on a contest and whoever wins is the Chosen. 
 
 Whoever is the Chosen one at the end of Troll 2 gains good fortune for the next year. The unworthy must consume goblin food to become more cunning for next year.
 
@@ -20,6 +20,6 @@ You can challenge the current Chosen once per movie. (You can still team up to h
 
 If the Chosen succeeds in their contest they can't use that contest again for the rest of that movie.
 
-If you need to relieve yourself as The Chosen, hide the mask and scepter somewhere safe in a common area and retrieve it after... if it's still there.
+If you need to relieve yourself as The Chosen, hide the mask and sceptre somewhere safe in a common area and retrieve it after... if it's still there.
 
 If there is a dispute it will be handled by The Gobfather.
