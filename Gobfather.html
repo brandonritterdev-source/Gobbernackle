@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Gobfather</title>
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=IM+Fell+English:ital@0;1&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1008;
+    --parchment: #f4e8c1;
+    --parchment-dark: #e8d49a;
+    --goblin-green: #3a5c2a;
+    --goblin-green-light: #5a8c3a;
+    --gold: #b8860b;
+    --red: #8b1a1a;
+    --border: #8b6914;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #1a1208;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 1rem;
+    font-family: 'IM Fell English', serif;
+  }
+  .page {
+    background: var(--parchment);
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(139,105,20,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(139,105,20,0.12) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04' /%3E%3C/svg%3E");
+    max-width: 480px;
+    width: 100%;
+    border: 3px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 0 40px rgba(0,0,0,0.7), inset 0 0 60px rgba(139,105,20,0.1);
+    position: relative;
+  }
+  .page::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(139,105,20,0.3);
+    pointer-events: none;
+  }
+  .stage-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--goblin-green);
+    text-align: center;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+  }
+  .divider {
+    text-align: center;
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin: 0.75rem 0;
+    letter-spacing: 8px;
+  }
+  .story {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--ink);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+    background: rgba(139,105,20,0.08);
+    border-left: 3px solid var(--gold);
+    word-spacing: 0.2em;
+  }
+  .notice {
+    background: rgba(58,92,42,0.08);
+    border: 2px solid var(--goblin-green);
+    border-radius: 3px;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--goblin-green);
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-family: 'Cinzel', serif;
+    word-break: break-all;
+    word-spacing: 0.5em;
+  }
+  .notice strong { color: var(--red); font-style: normal; }
+  .instructions {
+    font-size: 0.85rem;
+    color: #5a4a2a;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .instructions strong { color: var(--red); font-style: normal; }
+  
+  label {
+    display: block;
+    font-size: 0.8rem;
+    color: #5a4a2a;
+    margin-bottom: 0.4rem;
+    font-family: 'Cinzel', serif;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.5);
+    border: 2px solid var(--border);
+    border-radius: 3px;
+    color: var(--ink);
+    text-align: center;
+    outline: none;
+    margin-bottom: 0.75rem;
+  }
+  input:focus { border-color: var(--goblin-green); background: rgba(255,255,255,0.8); }
+  .btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--goblin-green);
+    color: var(--parchment);
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: var(--goblin-green-light); }
+  .result { display: none; margin-top: 1rem; margin-bottom: 1rem; padding: 1rem; border-radius: 3px; text-align: center; font-size: 0.9rem; line-height: 1.6; }
+  .result.success { background: rgba(58,92,42,0.15); border: 2px solid var(--goblin-green); color: var(--goblin-green); }
+  .result.fail { background: rgba(139,26,26,0.1); border: 2px solid var(--red); color: var(--red); }
+  .next-link { display: inline-block; margin-top: 0.75rem; font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; color: var(--goblin-green); text-decoration: none; border-bottom: 1px solid var(--goblin-green); }
+  .skull { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+  .hint-btn { background: none; border: none; color: var(--gold); font-family: 'IM Fell English', serif; font-size: 0.8rem; font-style: italic; cursor: pointer; margin-top: 0.5rem; text-decoration: underline; }
+  .hint { display: none; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 0.8rem; color: #6a5030; font-style: italic; padding: 0.5rem; background: rgba(184,134,11,0.1); border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="stage-badge"></div>
+  <h1>Gobfather - Wise Leader To All Goblin Kind</h1>
+  <div class="divider">⚔ ✦ ⚔</div>
+
+  <div class="result" id="result"></div>
+
+  <label for="answer">Enter a decoded keyword:</label>
+  <input type="text" id="answer" maxlength="10" placeholder="_ _ _ _ _" autocomplete="off" spellcheck="false">
+  <button class="btn" onclick="check()">Submit Answer</button>
+  <button class="hint-btn" onclick="toggleHint()">Need a hint?</button>
+  <div class="hint" id="hint">Perhaps dwelling upon the wisdom of those that came before could help you translate what this strange goblin is saying.</div>
+
+  <div class="story">
+    The Gobfather looks down upon you unblinking.
+  </div>
+  <div class="notice">
+    Boblin, the tiny guard by his<br> side croaks "If you have need of his excellency in the matter of a <strong>DISPUTE</strong> then say so and state <br>your cases, otherwise the <br>Gobfather doesn't wish to be <br>disturbed except on important <br>dealings.
+  </div>
+
+  <div class="instructions">
+    
+  </div>
+  
+</div>
+
+<script>
+function check() {
+  const now = new Date();
+  const unlock = now % 2;
+  
+  val = document.getElementById('answer').value.trim().toUpperCase();
+  res = document.getElementById('result');
+  if (val === 'TRANSLATOR') {
+    res.className = 'result success';
+    res.innerHTML = 'Come no closer. State your business with the gobfather.</a>';
+    res.style.display = 'block';
+  } 
+  else {
+    res.className = 'result fail';
+    res.innerHTML = '<strong>Try Again!</strong><br>The Gobfather remains motionless, seemingly lost in thought.';
+    res.style.display = 'block';
+  }
+  if (val === 'DISPUTE') {
+    res.className = 'result success';
+    if (unlock == 0) {
+      res.innerHTML = 'The esteemed goblin on my left is the victor is this instance.';
+      res.style.display = 'block';
+    }
+    else {
+      res.className = 'result fail';
+      res.innerHTML = 'The cunning goblin to my right is clearly correct.';
+      res.style.display = 'block';
+    }
+  }
+  if (val === 'QUEST' || val === '!') {
+    res.className = 'result success';
+    res.innerHTML = 'My mind has cleared. Whatever you did seems to have done the trick. You might be worthy for a higher calling. If you wish to complete my challenges and ascend, travel to the icy reaches and assemble the arctic fish, but be warned there lives in those depths creatures that deceive and those that know you\'re true nature, once your hands enter those icy depths they must not exit until the fish is completed. Return to me with what you discovered on this journey.';
+    res.style.display = 'block';
+  }
+  if (val === 'STONE') {
+    res.className = 'result success';
+    res.innerHTML = 'Excellent your mind is sharp and your body tough. Kneel before the stone obilisk and I shall grant you unnatural sight. With it find my scattered knowledge and deliver me their meaning.';
+    res.style.display = 'block';
+  } 
+  if (val === 'BONE') {
+    res.className = 'result fail';
+    res.innerHTML = '<strong>Ah... It seems you are unworthy...</strong> <br><i>You watch in horror as your bones leap from your body.</i> Feel free to try again.';
+    res.style.display = 'block';
+  } 
+  
+
+}
+function toggleHint() {
+  const h = document.getElementById('hint');
+  h.style.display = h.style.display === 'block' ? 'none' : 'block';
+}
+document.getElementById('answer').addEventListener('keydown', e => { if (e.key === 'Enter') check(); });
+</script>
+</body>
+</html>
