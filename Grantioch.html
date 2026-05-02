@@ -83,6 +83,13 @@
     border-left: 3px solid var(--gold);
     word-spacing: 0.2em;
   }
+  .instructions {
+    font-size: 0.85rem;
+    color: #5a4a2a;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .instructions strong { color: var(--red); font-style: normal; }
 </style>
 </head>
 <body>
@@ -93,6 +100,9 @@
   <img src="day.jpg" alt="Cliff overlooking a sun lit beach." id="image" style="max-width: 100%; height: auto; filter: drop-shadow(4px 4px 5px rgb(146, 206, 206));">
   <div class="divider"></div>
   <div class="story" id="story"></div>  
+  <div class="instructions">
+    Incredible I'm certain it's the recipe we've been searching for! I should head back to Gobson and tell him about the runes in the <strong>waves</strong>!
+  </div>
 </div>
 
 <script>
@@ -102,7 +112,7 @@ function check() {
   const now = new Date();
   console.log(now.toString());
 
- if (now.getHours() >= unlock) {
+ if (now.getHours() >= unlock || now.getHours() < 4) {
     story.innerHTML = 'Cliff overlooking a beach at night with glowing runes apearing and disappearing in the waves beneath.';
     console.log('gamer time');
     image.src = 'night.jpg';
