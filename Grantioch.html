@@ -100,9 +100,7 @@
   <img src="day.jpg" alt="Cliff overlooking a sun lit beach." id="image" style="max-width: 100%; height: auto; filter: drop-shadow(4px 4px 5px rgb(146, 206, 206));">
   <div class="divider"></div>
   <div class="story" id="story"></div>  
-  <div class="instructions">
-    Incredible I'm certain it's the recipe we've been searching for! I should head back to Gobson and tell him about the runes in the <strong>waves</strong>!
-  </div>
+  <div class="instructions" id="instructions"></div>
 </div>
 
 <script>
@@ -113,16 +111,18 @@ function check() {
   console.log(now.toString());
 
  if (now.getHours() >= unlock || now.getHours() < 4) {
-    story.innerHTML = 'Cliff overlooking a beach at night with glowing runes apearing and disappearing in the waves beneath.';
+    story.innerHTML = 'You\'re on a cliff overlooking a beach at night with glowing runes apearing and disappearing in the waves beneath.';
+    instructions.innerHTML = 'Incredible I\'m certain it\'s the recipe we\'ve been searching for! I should head back to Gobson and tell him about the runes in the <strong>waves</strong>!'
     console.log('gamer time');
     image.src = 'night.jpg';
-    image.alt = "Cliff overlooking a beach at night with glowing runes apearing and disappearing in the waves beneath.";
+    image.alt = "You're on a cliff overlooking a beach at night with glowing runes apearing and disappearing in the waves beneath.";
     image.style="max-width: 100%; height: auto; filter: drop-shadow(4px 4px 5px rgb(146, 206, 206)";
   }
   else {
-    story.innerHTML = 'Cliff overlooking a sun lit beach.';
+    story.innerHTML = 'You\'re on a cliff overlooking a sun lit beach.';
+    instructions.innerHTML = 'The cool breeze feels great on my skin but it doesn\'t look like there\'s a recipe here. Maybe I missed something on that old map.';
     image.src = 'day.jpg';
-    image.alt = "Cliff overlooking a sun lit beach.";
+    image.alt = "You're on a cliff overlooking a sun lit beach.";
     image.style="max-width: 100%; height: auto; filter: drop-shadow(4px 4px 5px rgb(160, 160, 160)";
   }
 

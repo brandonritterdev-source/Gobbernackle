@@ -188,11 +188,11 @@ function check() {
   
   val = document.getElementById('answer').value.trim().toUpperCase();
   res = document.getElementById('result');
-  if (val === 'TRANSLATOR') {
+  if (val === 'QUEST' || val === '!') {
     res.className = 'result success';
-    res.innerHTML = 'Come no closer. State your business with the gobfather.</a>';
+    res.innerHTML = 'My mind has cleared. Whatever you did seems to have done the trick. You might be worthy for a higher calling. If you wish to complete my challenges and ascend, travel to the icy reaches and assemble the arctic fish, but be warned there lives in those depths creatures that deceive and those that know you\'re true nature, once your hands enter those icy depths they must not exit until the fish is completed. Return to me with what you discovered on this journey.';
     res.style.display = 'block';
-  } 
+  }
   else {
     res.className = 'result fail';
     res.innerHTML = '<strong>Try Again!</strong><br>The Gobfather remains motionless, seemingly lost in thought.';
@@ -209,11 +209,6 @@ function check() {
       res.innerHTML = 'The cunning goblin to my right is clearly correct.';
       res.style.display = 'block';
     }
-  }
-  if (val === 'QUEST' || val === '!') {
-    res.className = 'result success';
-    res.innerHTML = 'My mind has cleared. Whatever you did seems to have done the trick. You might be worthy for a higher calling. If you wish to complete my challenges and ascend, travel to the icy reaches and assemble the arctic fish, but be warned there lives in those depths creatures that deceive and those that know you\'re true nature, once your hands enter those icy depths they must not exit until the fish is completed. Return to me with what you discovered on this journey.';
-    res.style.display = 'block';
   }
   if (val === 'STONE') {
     res.className = 'result success';
